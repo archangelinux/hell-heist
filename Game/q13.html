@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 13 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+    
+    <progress id="progress" value="13" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+  <div class = "prompt">
+      <p>Rise and shine!! As you step out of the car to take a piss in the bushes, a sudden gust blows your fedora off. 
+        It lands perfectly on the head of a giraffe. The body of the giraffe is 2.9 m tall and the neck + head is another 2.1 m. 
+        When you raise your arms, you can reach a height of 1.9 (sorry you are not very tall). But you have a solution to make up for your height! 
+        Remembering that you have some half eaten skittles in your pocket, and that giraffes like skittles, right? - (from those ads of the black dude milking the giraffe between those asian soap operas). 
+        You hope that the sight of skittles in your hand will make the giraffe bend down. Assume that the giraffe has its legs perpendicular to the ground. 
+  <div class = "form">
+    
+    <p>At least what distance should you stand from the giraffe to get your hat, so you don’t get a face full of giraffe neck when it bends down? (2 d.p.)</p>
+    <input id = "answ1" type = "text" value = "">
+    <br>
+    <p>The angle from the giraffe’s neck to its back was 115 degrees. What is the minimum angle it must bend down in order for you to reach the hat (2 d.p.)?</p>
+    <input id = "answ2" type = "text" value = "">
+    <br>
+    <button id = "check">OKAY!</button>
+    <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["Hurry up, the pee is creeping back up to your shoe.", "The giraffe sneezes on you.", "Your skittles are getting stale.", "Your bald head is getting sunburned.", "Keep trying..."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+      document.getElementById("answ2").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("check").click();
+        }
+        });
+      document.getElementById("check").onclick = function(){
+        var userInput1 = document.getElementById("answ1").value;
+        var userInput2 = document.getElementById("answ2").value;
+        if(userInput1 == "1.85" && userInput2 == "93.24"){
+          window.location = "q14.html";
+          }
+        else if(userInput1 == "" || userInput2 == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+    </script>
+    <p id = "error"></p>
+    </div>
+  </div>
+
+
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/5yMb8mGm/q13.png">
+
+  <div class="spoiler" style = "right: 50px; top: 790px; width: 500px">
+    <img id = "clue" src = "https://i.postimg.cc/d1649sNS/q13-clue.png" style = "width: 90%;">
+    <button id="spoilerButton" onclick="unspoiler(this)" style = "top: 220px; right: 210px">Click to reveal clue</button>
+  </div>
+  <script>
+    function unspoiler(spoiler) {
+	    spoiler.parentNode.classList.add('nospoiler');
+  }
+  </script>
+  
+</body>
+
+</html>

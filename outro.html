@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Thanks for playing HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="styleIntro.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet"></head>
+    
+<body>
+
+
+<div>
+    <span class="type" id = "pt1" style="--n:250; animation-play-state: running">YOU DID IT!! But as you make your way back from the bank, you see your little gang standing on your lawn. They bring you to your basement, put a knife to your throat, and force you to split your earnings with them.</span>
+    <br><button id = "button1" style = "animation-delay: 7s">Heck no!</button><br>
+    <span class="type" id = "pt2" style="--n:700; animation-play-state: paused;">
+        The time glitch (or was it the brain workout?) also made you pretty buff so you fight them off easily.<br>
+        <br><br>Then you pull out of your pocket…     <br>
+        A high school math Study Guide…       <br>
+        And tell them that if they practice enough…       <br>
+        They might wire their brains to steal their own car.<br>
+        --<br><br>
+        CONGRATULATION AGAIN FOR MAKING IT BACK! <br>
+        But that's not why I'm so happy for you. I just witnessed the most moving character development in a long time. You really have worked on yourself! - resisting the urge to shoplift and actually budgeting and paying for gas. See what math can do to a person? Man, I'm shedding tears already. Good luck on your future endeavors, but I doubt you'll need it.
+        <br>Signing off - Your critical alt.
+        </span> 
+        <button id = "finish" style = "animation-play-state: paused">GAME FINISHED</button><br>  
+</div>
+
+
+<script>
+    document.getElementById("button1").onclick = function(){
+        document.getElementById("pt1").style.animationName = "fadeOutAnimation"; 
+        document.getElementById("button1").style = "animation-name: fadeOutAnimation; animation-delay: 0s";
+        document.getElementById("pt2").style.animationPlayState = "running";
+        document.getElementById("finish").style.animationPlayState = "running";}
+    document.getElementById("finish").onclick =function(){
+        window.location = "index.html";
+    }
+        
+</script>
+</body>
+</html>

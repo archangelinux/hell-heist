@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 11 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+ 
+    <progress id="progress" value="11" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>PHEW… “Thanks” to the time glitch, it barely felt that long. <br>
+      The horse is gone! But so is the sun.<br>
+      Yea, it looks like you’re spending the night. The car screen displays that there are camping supplies in the trunk, so you’re in luck. Only it too, is encoded by a math question. What a lucky car.
+      </p>
+    <img id = "questionImg" src="https://i.postimg.cc/PfLxVdLn/Screen-Shot-2022-06-20-at-6-48-57-PM.png">
+        
+        <div class = "form">
+    
+            <p>The car prompts you to simplify the above expression to the form a^m/b^n. Find the sum m + n:</p>
+            <input id = "answ1" type = "text" value = "">
+            <br>
+            <button id = "check">OKAY!</button>
+            <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["It's getting chilly.", "Might as well open it with your bare hands...try harder.", "No good.", "You suck.", "Keep trying."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+              document.getElementById("answ1").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("check").click();
+                }
+                });
+              document.getElementById("check").onclick = function(){
+                var userInput = document.getElementById("answ1").value;
+                if(userInput == "33"){
+                    window.location = "q12.html";
+                  }
+                  else if(userInput == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+            </script>
+            <p id = "error"></p>
+          </div>
+  </div>
+
+
+  
+  
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/GpVcmRxV/q11.png">
+
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

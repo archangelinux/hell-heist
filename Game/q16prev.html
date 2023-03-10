@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 16 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../styleIntro.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet"></head>
+    
+<body>
+
+    <button id="skip" style="animation-duration: 0.7s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;">SKIP</button>
+    <script>
+        document.getElementById("skip").onclick=function(){
+            window.location = "Game/q16.html";
+        }
+    </script>
+<div>
+    <span class="type" id = "pt1" style="--n:500; animation-play-state: running">The moment you type in the correct answer, the car seems to chime. Your heart rate surges and you begin to spin, spin, spin…<br><br>
+        CONGRATULATIONS!! So you made it back to your world again - feeling like jello, but body intact. As for the car, it looks like something from the future (because it is, probably). But on a second thought, you really don’t want to risk another wild ride in some mysterious land like that again, do you? So better to sell it.</span> 
+    <br><br>
+        <span class="type" id = "pt2" style="--n:11; animation-play-state: paused;">No problem. </span>
+    <button id = "to16" >Take me to the final question!</button><br><br>
+
+</div>
+
+<script>
+    document.getElementById("to16").onclick = function(){
+        document.getElementById("pt1").style.animationName = "fadeOutAnimation"; 
+        document.getElementById("to16").style = "animation-name: fadeOutAnimation; animation-delay: 0s";
+        document.getElementById("pt2").style.animationPlayState = "running";
+        setTimeout(function () {
+        window.location.href = "q16.html"}, 2000);
+    }
+
+</script>
+</body>
+</html>

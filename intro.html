@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome to HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="styleIntro.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet"></head>
+    
+<body>
+
+    <input id="home" type = "image" src = "https://i.pinimg.com/564x/01/5e/f0/015ef02199ea312e5ffac3d7a12843e4.jpg" style="animation-duration: 0.7s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;"></input>
+    <button id="skip" style="animation-duration: 0.7s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;">SKIP</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            window.location = "index.html";
+        }
+        document.getElementById("skip").onclick=function(){
+            window.location = "Game/q1.html";
+        }
+    </script>
+<div>
+    <span class="type" id = "pt1" style="--n:242; animation-play-state: running">I must admit, you were a pretty decent student back then! You aren't now, but at least you keep yourself looking fine, or I hope. I don't know any more than you do on how you ended up here, except maybe you drank too much cotton candy Faygo.</span> 
+    <button id = "button1" >Hey! I'm still a great student.</button><br><br>
+    <span class="type" id = "pt2" style="--n:232; animation-play-state: paused;">Alright, alright. Says the drop-out full-time con artist. Ahem.
+        I would have said that you are a successful one, but that would be lying since your crew just deserted you 5 miles back and drove off in your newly-stolen Honda Civic. </span>
+    <button id = "button2" style = "animation-play-state: paused;">Can you get to the point?</button><br><br>
+    <span class="type" id = "pt3" style="--n:507; animation-play-state: paused;">Okay! My point is.. you just need to stop your fishy gig and get a ride home. Your crew may have left you alone, but they did forget to take a peculiar-looking key card that matches a very sleek car parked right before you.
+        I hope you're talented enough to pull this off! <br> Anyways I'm already using too much of your brainpower - no more chit-chat for now. I'll leave it to you.<br> Good luck - From your critical alt</span>
+        <button id = "proceed">I'M READY...</button>
+</div>
+<script>
+    document.getElementById("button1").onclick = function(){
+        document.getElementById("pt1").style.animationName = "fadeOutAnimation"; 
+        document.getElementById("button1").style = "animation-name: fadeOutAnimation; animation-delay: 0s";
+        document.getElementById("pt2").style.animationPlayState = "running";
+        document.getElementById("button2").style = "animation-play-state: running"; 
+    }
+    document.getElementById("button2").onclick = function(){
+        document.getElementById("pt2").style.animationName = "fadeOutAnimation";
+        document.getElementById("button2").style = "animation-name: fadeOutAnimation; animation-delay: 0s";
+        document.getElementById("pt3").style.animationPlayState = "running";
+        document.getElementById("proceed").style = "animation-play-state: running";}
+    document.getElementById("proceed").onclick = function(){
+        window.location = "Game/q1.html";}
+</script>
+</body>
+</html>

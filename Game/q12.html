@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 12 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+  
+    
+    <progress id="progress" value="12" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>Good work! You take out a blanket and a pillow - you deserve the rest. But it's hard to fall asleep in this strange world. To pass the time, you want to see what the weather will be like tomorrow. But since your phone is a bit screwed, Siri tells you that the weather is: </p>
+        <img id="questionImg" src="https://i.postimg.cc/LhKgW7Xg/Screen-Shot-2022-06-23-at-6-39-03-PM.png">
+        <div class = "form">
+    
+            <p>It leaves you with an interval which is tomorrow's temperature range. What is the average degree tomorrow?</p>
+            <input id = "answ1" type = "text" value = "">
+            <br>
+            <button id = "check">OKAY!</button>
+            <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["Incorrect.", "Teehee. Funny answer!", "No.", "You are really bad at this.", "Keep trying..."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+              document.getElementById("answ1").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("check").click();
+                }
+                });
+              document.getElementById("check").onclick = function(){
+                var userInput = document.getElementById("answ1").value;
+                if(userInput == "11.5"){
+                    window.location = "q13.html";
+                  }
+                  else if(userInput == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+            </script>
+            <p id = "error"></p>
+          </div>
+  </div>
+
+
+  
+  
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/9Ftsn2RV/q12.png">
+
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

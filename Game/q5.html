@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 5 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+    
+    <progress id="progress" value="5" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>Congratulations! You can now keep driving. <br>
+      Suddenly, you realize that there is another gas station directly 12 km east of you. With little money for your seemingly endless drive, you want to weigh your options. 
+      You need to fill your tank to full. A car tank holds 80 litres of gas, and consumes 0.5litres/km. Your car displays the prices as $4/litre at the gas station exactly 12km east of you,  while the first gas station (6.13 km away) charges $4.5/litre and an additional $2 for every litre over 25 litres, because the gas is Ultra Fine (yay.) 
+      You currently have 20 litres of gas in your car. 
+      
+        
+        <div class = "form">
+    
+          <p>Which station will be cheaper to fill your gas tank? (type "east" or "southeast")</p>
+          <input id = "answ1" type = "radio" value = "">
+          <br>
+          <p>How much will you need to spend at that station? (assume no tax, 2 d.p.)</p>
+          <input id = "answ2" type = "text" value = "">
+          <br>
+          <button id = "check">OKAY!</button>
+          <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["You are a disappointment to your mother and society.", "Why the fedora if there's nothing underneath it D; ??", "Nope.", "You suck.", "Keep trying..."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+            document.getElementById("answ2").addEventListener("keypress", function(event) {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("check").click();
+              }
+              });
+            document.getElementById("check").onclick = function(){
+              var userInput1 = document.getElementById("answ1").value;
+              var userInput2 = document.getElementById("answ2").value;
+              if(userInput1 == "east" && userInput2 == "264"){
+                window.location = "q6.html";
+                }
+                else if(userInput1 == "" || userInput2 == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+          </script>
+          <p id = "error"></p>
+        </div>
+    </div>
+
+
+  
+  
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/9fV5ff6D/q5.png">
+
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

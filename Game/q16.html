@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 16 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+  
+    
+    <progress id="progress" value="16" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>
+      Of all the lessons you have learned from this journey, you’ve come to the conclusion: making an investment with stolen money is better than making an investment with your money.<br>
+      WAIT A MINUTE!<br>
+      This is your money! You’ve really earned it this time. I grant you.<br>
+      Edited conclusion: making an investment with your money is better than making an investment with stolen money.<br>
+      Your earnings from the thousands of cars come to $5000 (depreciation sucks huh). You decide to invest 3/4 of it in Bartholomew Banking Services Ltd. and the other 1/4 in Musty Trust. After negotiations, Bartholomew Banking gives you interest of 5% p.a., compounded quarterly. Musty Trust offers you 3% p.a., compounded biweekly.
+
+       </p>
+        
+        <div class = "form">
+    
+            <p>After 15 years of collecting interest, how much would you have?</p>
+            <input id = "answ1" type = "text" value = "">
+            <br>
+            <button id = "check">OKAY!</button>
+            <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["Almost there last question!! Keep trying!", "Think of the children!", "No.", "Don't be funny.", "Keep trying."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+              document.getElementById("answ1").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("check").click();
+                }
+                });
+              document.getElementById("check").onclick = function(){
+                var userInput = document.getElementById("answ1").value;
+                if(userInput == "986181.17"){
+                    window.location = "../outro.html";
+                  }
+                  else if(userInput == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+            </script>
+            <p id = "error"></p>
+          </div>
+  </div>
+  
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/FzG81gQz/q16.png">
+
+
+</body>
+
+</html>

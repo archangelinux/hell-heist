@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 3 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+  <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+    
+    <progress id="progress" value="3" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>Wow! See what I mean? - you really do have the brains! It nearly took you all day but…wait a minute! The sun is barely over the horizon, yet looking at your phone, it's 10:40am!! Something is really off, so you hurriedly hit the gas and go on your way. 
+     <br>Your slightly irritating friend calls you. You’re about to pick up the phone, but you come across a very warped roadway in some absurd dimensional glitch. It suddenly hits you that something about starting this car must have played with time…you’re time travelling. So much for getting home.
+      <br><br>
+      The hills you must drive over are modeled by the function h = 6 sin [4 ( d - 22.5 deg ) + 6], (where h = height in m, d = distance in m), but you can only receive signals when you are above 9 metres. To complicate things, each time your cell phone loses signal, your phone battery abruptly drops 15% (you’re lost in time). 
+      
+
+        <div class = "form">
+    
+            <p>As you begin driving the hills, how long do you have before your phone dies if it is currently at 42% and it takes you 10 minute to drive uphill and 5 minutes downhill both at a constant horizontal velocity (assume your driving speed is unaffected by the time glitch, and round to 2 d.p.)?</p>
+            <input id = "answ1" type = "text" value = "">
+            <br>
+            <button id = "check">OKAY!</button>
+        <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["Naw...", "Why the fedora if there's nothing underneath it D; ??", "Think harder.", "You are really bad at this.", "Keep trying..."];
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+          document.getElementById("answ1").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              document.getElementById("check").click();
+            }
+            });
+          document.getElementById("check").onclick = function(){
+            var userInput = document.getElementById("answ1").value;
+            if(userInput == "43.33"){
+                window.location = "q4.html";
+              }
+              else if(userInput == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+        </script>
+        <p id = "error"></p>
+      </div>
+  </div>
+
+
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/X7JvVswR/q3.png">
+
+  <div class="spoiler">
+    <img id = "clue" src = "https://i.postimg.cc/pXX347DF/q3-clue.png">
+    <button id="spoilerButton" onclick="unspoiler(this)">Click to reveal clue</button>
+  </div>
+  <script>
+    function unspoiler(spoiler) {
+	    spoiler.parentNode.classList.add('nospoiler');
+  }
+  </script>
+  
+</body>
+
+</html>

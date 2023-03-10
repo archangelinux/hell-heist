@@ -1,0 +1,274 @@
+body{
+  background-color: #21454a;
+  font-family: 'IBM+Plex+Mono', monospace;
+  line-height: 170%;
+  padding: 0px;
+  margin: 0px;
+  height: 1500px;
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  } 
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeIn
+{
+0% {
+  opacity: 0;
+} 
+100% {
+  opacity: 1;
+  
+}
+}
+.toolbar{
+  background-color: #00000070;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-left: 30px;
+  z-index: 20;
+}
+#home{
+  background-color: rgba(133, 181, 124, 0.534);
+  color: rgb(234, 237, 228);
+  border-color: transparent;
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  height: 45px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Anaheim';
+}
+#cheat{
+background-color: rgba(133, 181, 124, 0.534);
+color: rgb(234, 237, 228);
+border-color: transparent;
+position: relative;
+top: 20px;
+height: 50px;
+width: 200px;
+border-radius: 10px;
+font-size: 18px;
+font-family: 'Anaheim';
+}
+#check{
+background-color: rgba(133, 181, 124, 0.534);
+  color: rgb(234, 237, 228);
+  border-color: transparent;
+  position: relative;
+  top: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Anaheim';
+}
+#error{
+position: relative;
+top: 10px;
+font-size: 18px;
+font-family: 'Anaheim';
+}
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+progress{
+  position: absolute;
+  top: 70px;
+  right: 130px;
+  height: 20px;
+  width: 600px;
+}
+progress::-webkit-progress-value {
+  background:rgba(255, 82, 76);
+  border-radius: 20px;
+
+}
+progress[value]::-webkit-progress-bar {
+  background:#34806c;
+  border-radius: 20px;   
+}
+label{
+  position: absolute;
+  top: 68px;
+  right: 750px;
+  color:rgb(234, 237, 228);
+  font-family: "Anaheim";
+  font-size: large;
+
+}
+.prompt{
+  background-color: #4f6869;
+  width: 40%;
+  height: 900px;
+  position:absolute;
+  top: 200px;
+  left: 5%;
+  padding: 5%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 5;
+  
+}
+.form{
+  background-color: #68878d;
+  border-radius: 20px;
+  width: 400px;
+  position: relative;   
+  top:50px; 
+  left: 0;
+  padding: 10%;
+  padding-bottom: 100px;
+  z-index: 15;
+
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}
+
+#illust{
+position: absolute;
+z-index: 15;
+top: 200px;
+right: 5%;
+width: 40%;
+animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+#questionImg{
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+
+}
+.spoiler{
+  z-index: 15;
+  width: 550px;
+  position: absolute;
+  top: 770px;
+  right: 500px;
+ 
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+#spoilerButton{
+  background-color: rgb(225, 202, 87);
+    color: rgb(234, 237, 228);
+    border-color: transparent;
+    position: absolute;
+    top: 300px;
+    right: 100px;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: "Anaheim";
+}
+div.spoiler img {
+	vertical-align: bottom;
+	filter: blur(8px) grayscale(100%);
+	transition: 0.3s;
+}
+div.nospoiler img {
+	filter: none;
+}
+div.nospoiler button {
+	display: none;
+}
+
+#backdrop{
+background-color:#68878d;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+height: 900px;
+padding:5%;
+position: absolute;    
+left: 55%;
+right: 5%;
+top: 200px;
+z-index: 10;
+}
+
+input{
+  color:rgb(0, 0, 0);
+  text-align: center;
+  border-color: transparent;
+  height: 50px;
+  width: 300px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family: "Anaheim";
+}
+p{
+  color: #ffffff;
+  font-family: "Anaheim";
+  font-size: 18px;
+}
+p{
+animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}
+h1{
+  color: darkolivegreen;
+  font-family: "Anaheim";
+}
+a{
+  color: rgb(249, 249, 249);
+  font-family: "Anaheim";
+
+}
+
+button:hover{
+  background-color: rgb(234, 10, 118)!important;
+  transition: 0.5s;
+}
+button:active{
+background-color: rgb(232, 90, 7)!important;
+}
+
+input:hover{
+  background-color: rgba(255, 82, 76, 0.686)!important;
+  transition: 0.5s;
+}
+
+
+

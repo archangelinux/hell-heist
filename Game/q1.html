@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 1 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+<body>
+  <div class = "toolbar" style = " animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeInTop;">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150">
+    <button id="home">HOME</button>
+    <script>
+        
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                    window.location = "../index.html";
+            }
+          }
+   </script>        
+    <progress id="progress" value="1" max="16" ></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+
+    
+  <div class = "prompt">
+    <p>It's the hottest self-driving car you’ve ever seen. Its security system is kind of similar to some one the Teslas you’ve seen around. To open the door, you have to tap a key card on the side of the drivers’ window frame. 
+      But it's not that simple. A memo on the key card tells you the number of times you must tap it, and at what hours would it function (function haha) relative to midnight. You must tap it a minimum of 1 time and a maximum of 6 in a row. The car displays:
+      <br> f(x) = a cos 30x + b, where f(x) is the number of taps.
+       
+      </p>
+      <div class = "form">
+    
+        <p>If the time is now 9:47am, how many minutes must you wait to tap a whole number of times?</p>
+        <input id = "answ1" type = "text" value = "">
+        <br>
+        <p>How many times?</p>
+        <input id = "answ2" type = "text" value = "">
+        <br>
+        <button id = "check">OKAY!</button>
+        
+        <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["Incorrect.", "Teehee. Funny answer!", "No.", "You are really bad at this.", "Keep trying..."];
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+          document.getElementById("answ2").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              document.getElementById("check").click();
+            }
+            });
+          document.getElementById("check").onclick = function(){
+            var userInput1 = document.getElementById("answ1").value;
+            var userInput2 = document.getElementById("answ2").value;
+            if(userInput1 == "27" && userInput2 == "5"){
+              window.location = "q2.html";
+              }
+            else if(userInput1 == ""|| userInput2 ==""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+        </script>
+        <p id = "error"></p>
+      </div>
+  </div>
+  
+ 
+
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/9Qkw3vKg/q1.png">
+  
+</body>
+
+</html>

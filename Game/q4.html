@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 4 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            {
+                window.location = "../index.html";
+            }
+        }
+    </script>
+    
+    <progress id="progress" value="4" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>Okay! So you decided to not pick up the phone to save battery. Good call (haha). <br>
+      You aren’t celebrating of course. This strange car you’re in… its playing tricks on you. <br>
+      That’s right. As a punishment for not entering the startup password correctly the first time, it requires you to answer another question in order to keep driving. Also, you got played pretty badly. You’re out of gas. What kind of futuristic self-driving car uses gas??
+      <br>You are southwest of the gas station. A sign tells you that you are exactly 2km south of the gas station, but you don’t know how far west. Before you can graph the road in your head, a time-glitch sends you spinning in a void. The road, along with you, has flipped horizontally in the “x-axis” then shifted 10 km north. However, the gas station is still in its original location! 
+      <br>You pull up Google Maps having your well deserved phone battery. Except the car can remotely control your phone, kills it, and gives you a math question:
+</p>      
+        
+        <div class = "form">
+    
+            <p>The road you are driving on just happens to resemble the function y = (x+4)^3 +3. The gas station you were driving towards used to be right at the center of this cubic function. Now, what is the length of the nearest pathway to the gas station if you were to drive across the field from your current location on the road (2 d.p.)?</p>
+            <input id = "answ1" type = "text" value = "">
+            <br>
+            <button id = "check">OKAY!</button>
+            <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["Wish you were Dora, don't you.", "Why the fedora if there's nothing underneath it D; ??", "Nope.", "You suck.", "Keep trying..."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+              document.getElementById("answ1").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("check").click();
+                }
+                });
+              document.getElementById("check").onclick = function(){
+                var userInput = document.getElementById("answ1").value;
+                if(userInput == "6.13"){
+                    window.location = "q5.html";
+                  }
+                  else if(userInput == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+            </script>
+            <p id = "error"></p>
+          </div>
+  </div>
+  
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/2SWr6M3K/q4.png" style = "width: 700px">
+
+  <div class="spoiler">
+    <img id = "clue" src = "https://i.postimg.cc/vBtSSLTh/q4-clue.png" style ="width: 80%">
+    <button id="spoilerButton" onclick="unspoiler(this)">Click to reveal clue</button>
+  </div>
+  <script>
+    function unspoiler(spoiler) {
+	    spoiler.parentNode.classList.add('nospoiler');
+  }
+  </script>
+  
+</body>
+
+</html>

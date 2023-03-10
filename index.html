@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome to HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="styleHome.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">  
+
+  
+<body>
+  
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="300" width="300">
+
+  </div>   
+
+ 
+  <button id = "play">START</button>
+  <button id = "about">ABOUT</button>
+  <button id = "answers">ANSWER KEY</button>
+  <label class="switch" >
+    <input type="checkbox" id = "cheatMode">
+    <span class="slider round"></span>
+  </label>
+  <label for = "switch" id = "switchLabel">Cheat Mode</label>      
+  </div>
+
+  <script>
+    localStorage.clear();
+    document.getElementById("play").onclick = function(){
+      var cheatModeOn = document.getElementById("cheatMode").checked;
+      console.log(cheatModeOn);
+      localStorage.setItem("cmo", cheatModeOn);
+      window.location = "intro.html";
+    }
+    document.getElementById("about").onclick = function(){
+      window.location = "about.html";
+    }
+    document.getElementById("answers").onclick = function(){
+      window.location = "answers.html";
+    }
+  </script>
+  
+</body>
+
+</html>

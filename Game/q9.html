@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 9 | HellHeist</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/68/91/97/6891976dfbb843cd6833d3c63b3a5c69.jpg">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class = "toolbar">
+    <img class = "centre" src = "https://i.postimg.cc/tJ0PxY30/hellheist-logo.png" height="150" width="150" style="animation-duration: 0.6s;
+">
+    <button id="home">HOME</button>
+    <script>
+        document.getElementById("home").onclick=function(){
+            if(confirm("Go back to home? You will lose your progress."))
+            { 
+                    window.location.href = "../index.html";
+            }     
+        }
+    </script>
+    
+    <progress id="progress" value="9" max="16"></progress>
+    <label for="progress">PROGRESS:</label>
+  </div>
+    
+  <div class = "prompt">
+    <p>As you walk out of the convenience store, your car is no longer parked where you left it. It’s oddly 89 m down the street. Before you can scratch your head, it makes a sharp turn and drives 62m in its new direction on its own, then stops. You need to turn /5 radians from where you are (facing down the road). 
+      You contemplate if it’s a far enough running distance for you to treat yourself to a snack (so like over 50 m, yes). </p>
+
+        <div class = "form">
+    
+            <p>How far do you have to run if it has driven another 10m while you were thinking (and hopefully doesn’t move again)? Round all variables to 2 d.p. and final answer to nearest whole number.</p>
+            <input id = "answ1" type = "text" value = "">
+            <br>
+            <button id = "check">OKAY!</button>
+            <button id="cheat">VIEW ANSWERS</button>
+        <script>
+        var cheatModeOn = localStorage.getItem("cmo");
+        var attempt = 0;
+        var errorMessages = ["How are you already sweating...", "I know you want that snack.", "No good.", "You suck.", "Keep trying."];
+          
+        document.getElementById("cheat").onclick = function(){
+          if(cheatModeOn=="true"){ 
+              window.location = "../cheat.html";
+
+          }
+        else{
+              alert("Cheat mode was disabled. You cannot view the answers now.");
+          }   
+        }
+           
+              document.getElementById("answ1").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("check").click();
+                }
+                });
+              document.getElementById("check").onclick = function(){
+                var userInput = document.getElementById("answ1").value;
+                if(userInput == "100"){
+                    window.location = "q10.html";
+                  }
+                  else if(userInput == ""){
+              document.getElementById("error").innerHTML = "Nice try. Answer both questions.";
+            }
+            else{
+                document.getElementById("error").innerHTML = errorMessages[attempt];
+                if (attempt < 4){
+                  attempt ++;
+                }
+            }
+          }
+            </script>
+            <p id = "error"></p>
+          </div>
+  </div>
+  
+  <div id = "backdrop"></div>
+  <img id = "illust" src = "https://i.postimg.cc/dVnPLFwn/q9.png">
+
+
+  <div class="spoiler">
+    <img id = "clue" src = "https://i.postimg.cc/28K9J5ks/q9-clue.png" style = "width: 90%;">
+    <button id="spoilerButton" onclick="unspoiler(this)" style = "right: 50px">Click to reveal clue</button>
+  </div>
+  <script>
+    function unspoiler(spoiler) {
+	    spoiler.parentNode.classList.add('nospoiler');
+  }
+  </script>
+  
+</body>
+
+</html>

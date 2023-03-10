@@ -1,0 +1,202 @@
+body{
+    background-image: url("https://i.ytimg.com/vi/5aNsIsYQF1U/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'IBM+Plex+Mono', monospace;
+    padding: 0px;
+    margin: 0px;
+    transition: background-image 5s ease-in-out;
+  }
+
+@keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+@keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+@keyframes fadeInTop {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    } 
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+.toolbar{
+    background-color: #00000091;
+    position: fixed;
+    top: 0;
+    color: #f1f1f1;
+    width: 100%;
+    height: 300px;
+
+    animation-duration: 1s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInTop;
+}
+.switch {
+  position: absolute;
+  width: 60px;
+  height: 34px;
+  bottom: 180px;
+  left: 160px;
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeInRight;
+
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #34806c;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: rgba(255, 82, 76);
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px rgba(255, 82, 76);
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+#switchLabel{
+  position: absolute;
+  bottom: 185px;
+  left: 50px;
+  color:rgb(234, 237, 228);
+  font-family: "Anaheim";
+  font-size: 20px;
+  animation-duration: 1s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name: fadeInRight;
+}
+
+#play{
+    background-color: rgba(247, 86, 145, 0.412);
+    color: rgb(247, 148, 155);
+    border-color: transparent;
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+    height: 100px;
+    width: 350px;
+    border-radius: 10px;
+    font-size: 40px;
+    font-family: "Anaheim";
+
+    animation-duration: 1s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+}
+
+#about{
+    background-color: rgba(133, 181, 124, 0.534);
+    color: rgb(234, 237, 228);
+    border-color: transparent;
+    position: absolute;
+    bottom: 120px;
+    right: 50px;
+    height: 45px;
+    width: 350px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: "Anaheim";
+
+    animation-duration: 1s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+}
+
+#answers{
+    background-color: rgba(133, 181, 124, 0.534);
+    color: rgb(234, 237, 228);
+    border-color: transparent;
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    height: 45px;
+    width: 350px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: "Anaheim";
+
+    animation-duration: 1s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+}
+
+button:hover{
+    background-color:rgb(232, 90, 7)!important;
+    transition: 0.5s;
+    
+}
+.centre{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+p{
+color: #ffffff
+}
+
+
+input:hover{
+    background-color: #095151!important;
+    transition: 0.5s;
+}
